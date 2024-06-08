@@ -530,3 +530,215 @@ Didapatkan netmask akhir pada I1 adalah `/18`
 
 ## Tree CIDR 
 ![CIDR Tree](dump/tree-cidr.jpg)
+
+## Konfigurasi
+### Jawa (Router)
+```
+auto eth0
+iface eth0 inet dhcp
+up iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.65.0.0/16
+
+#A16
+auto eth1
+iface eth1 inet static
+  address 10.65.16.129
+  netmask 255.255.255.252
+
+#A8
+auto eth2
+iface eth2 inet static
+  address 10.65.4.1
+  netmask 255.255.255.252
+
+#A1
+auto eth3
+iface eth3 inet static
+  address 10.65.36.1
+  netmask 255.255.255.252
+```
+### Sumatera (Router)
+```
+auto eth0
+iface eth0 inet static
+  address 10.65.36.2
+  netmask 255.255.255.252
+
+auto eth1
+iface eth1 inet static
+  address 10.65.32.65
+  netmask 255.255.255.224
+
+auto eth2
+iface eth2 inet static
+  address 10.65.34.1
+  netmask 255.255.255.252
+```
+### Sumatera-Utara (Router)
+```
+auto eth0
+iface eth0 inet static
+  address 10.65.32.66
+  netmask 255.255.255.224
+
+auto eth1
+iface eth1 inet static
+  address 10.65.32.33
+  netmask 255.255.255.252
+```
+### Aceh (Router)
+```
+#A5
+auto eth0
+iface eth0 inet static
+  address 10.67.32.34
+  netmask 255.255.255.252
+
+#A7
+auto eth1
+iface eth1 inet static
+  address 10.67.32.1
+  netmask 255.255.255.224
+
+#A6
+auto eth2
+iface eth2 inet static
+  address 10.67.32.129
+  netmask 255.255.255.128
+```
+### Lampung (Router)
+```
+auto eth0
+iface eth0 inet static
+  address 10.65.34.2
+  netmask 255.255.255.252
+
+auto eth1
+iface eth1 inet static
+  address 10.65.33.1
+  netmask 255.255.255.0
+```
+### Kalimantan (Router)
+```
+#A8
+auto eth0
+iface eth0 inet static
+  address 10.65.4.2
+  netmask 255.255.255.252
+
+#A9
+auto eth2
+ iface eth2 inet static
+  	address 10.65.0.129
+  	netmask 255.255.255.252
+```
+### Kalimantan-Utara (Router)
+```
+ auto eth0
+ iface eth0 inet static
+  	address 10.65.0.130
+  	netmask 255.255.255.252
+ 
+auto eth1
+ iface eth1 inet static
+  	address 10.65.1.1
+  	netmask 255.255.255.0
+
+auto eth2
+ iface eth2 inet static
+  	address 10.65.0.65
+  	netmask 255.255.255.252
+```
+### Kalimantan-Timur (Router)
+```
+auto eth0
+ iface eth0 inet static
+  	address 10.65.0.66
+  	netmask 255.255.255.252
+
+auto eth1
+ iface eth1 inet static
+  	address 10.65.2.1
+  	netmask 255.255.254.0
+
+auto eth2
+ iface eth2 inet static
+  	address 10.65.0.33
+  	netmask 255.255.255.252
+```
+### Kalimantan-Selatan (Router)
+```
+auto eth0
+ iface eth0 inet static
+  	address 10.65.0.34
+  	netmask 255.255.255.252
+
+auto eth1
+ iface eth1 inet static
+  	address 10.65.8.1
+  	netmask 255.255.248.0
+
+auto eth2
+ iface eth2 inet static
+  	address 10.65.0.1
+  	netmask 255.255.255.224
+```
+### Sulawesi (Router)
+```
+#A16
+auto eth0
+iface eth0 inet static
+  address 10.65.16.130
+  netmask 255.255.255.252
+
+#A20
+auto eth1
+ iface eth1 inet static
+  	address 10.65.17.1
+  	netmask 255.255.248.0
+
+#A17
+auto eth2
+ iface eth2 inet static
+  	address 10.65.16.9
+  	netmask 255.255.255.248
+```
+### Makassar (Router)
+```
+#A17
+auto eth0
+iface eth0 inet static
+  address 10.65.16.10
+  netmask 255.255.255.248
+
+#A18
+auto eth1
+iface eth1 inet static
+  address 10.65.16.1
+  netmask 255.255.255.248
+```
+### Belawa (Router)
+```
+#A17
+auto eth0
+iface eth0 inet static
+  address 10.65.16.11
+  netmask 255.255.255.248
+
+#A19
+auto eth1
+iface eth1 inet static
+  address 10.65.16.65
+  netmask 255.255.255.192
+```
+### Maluku-Utara (Router)
+```
+ auto eth0
+ iface eth0 inet static
+  	address 10.65.17.2
+  	netmask 255.255.248.0
+
+ auto eth1
+ iface eth1 inet static
+  	address 10.65.24.1
+  	netmask 255.255.248.0
+```
