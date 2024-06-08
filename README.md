@@ -151,6 +151,9 @@ Network Address
 <p align="center">
     <img src="dump/malut.png">
 
+## Hasil VLSM
+![gambar-VLSM](dump/hasil-vlsm.png)
+
 # CIDR
 ## Penggabungan Subnet 
 
